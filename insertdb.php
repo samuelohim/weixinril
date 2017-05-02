@@ -9,13 +9,14 @@
 		$nin = $_POST['nin'];
 		$zht = $_POST['xsh'];
 		$fzh = $_POST['fzh'];
+		$lexing = $_POST['lx'];
 		$zou = $_POST['zou'];
 //  
 
 	if (mysqli_query($con, "INSERT INTO yuyue (wid, riq, yue, nin, zht, 
-												fzh, zou) 
+												fzh, zou, leixing) 
 							VALUES ('$wid', '$riq', '$yue', '$nin', '$zht',
-									 '$fzh', '$zou')"))
+									 '$fzh', '$zou', '$lexing')"))
 	{
 		 	echo json_encode($_POST);	
 	}

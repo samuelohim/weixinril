@@ -15,16 +15,14 @@
 											    'zht' => $lie['zht'],
 											    'fzh' => $lie['fzh'],
 											    'zou' => $lie['zou'],
-											    'dianhua' => $lie['dianhua'],
-											    'dianyou' => $lie['dianyou'],
-											    'leixing' => $lie['leixing'],
-											    'liuyan' => $lie['liuyan']
-		));
+											    'leixing' => $lie['leixing']
+											  )
+				   );
 
 	}
 
-	// echo json_encode($twoDimensionalArray);
-	echo 'ln 27';
+	 echo json_encode($twoDimensionalArray);
+	//        echo 'ln 27';
 /*
 	require_once('dbconnect.php');
 

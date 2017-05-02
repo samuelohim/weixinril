@@ -17,49 +17,54 @@ function done(){
 
 function showRecord(){
 		$('table.listing').find('tbody.listingtbody').empty();
-					alert('20');
-					$('table.table-striped.listing').find('.listingtbody').append('888');
 
-					$.getJSON('rt.php', function(echos){
-						alert('ln 22'.echos);
-					});
+					$.getJSON("retrievedb.php", function(echos){
+						$.each(echos, function(){
+							
+						 $('table.table-striped.listing').find('.listingtbody').append('<tr id = \''+this['id']+'\'>\
+												<td class = \'wid\'>'+this['wid']+'</td>\
+												<td class = \'riq\'><span id = \'ri\'>'+this['riq']+'-</span>\
+																	<span id = \'yue\'>'+this['yue']+'-</span>\
+																	<span id = \'nin\'>'+this['nin']+'</span></td>\
+												<td class = \'shijian\'><span id = \'zht\'>'+this['zht']+':</span>\
+																	<span id = \'fzh\'>'+this['fzh']+'</span>\
+																	<span id = \'zou\'>'+this['zou']+'</span></td>\
+												<td class = \'shijian\'><span id = \'leixing\'>'+this['leixing']+'</span></td>\
+												<td class = \'settings\'><button class=\"btn btn-danger\">\
+																			<span class = \'glyphicon glyphicon-trash\'></span>\
+																		</button>\
+																		\
+																		<button class=\"btn btn-success\">\
+																			<span class = \'glyphicon glyphicon-zoom-in\'></span>\
+																		</button>\
+																		\
+																		<button class=\"btn btn-warning\">\
+																			<span class = \'glyphicon glyphicon-wrench\'></span>\
+																		</button></td>\
+												</tr>\
+							');
+						});
+			        })
+			        .error(function(jqXHR, textStatus, errorThrown){
+			        	console.log('error: '+textStatus+'\n');
+			        	console.log('error: '+jqXHR.responseText+'\n');
+			        	console.log('error: '+errorThrown+'\n');
+			        })
+			        .success(function(){
+			        	console.log('success');
+			        });
 	//	$.getJSON('rt.php', function(echos){
 	//		alert('21');
 	//		$('table.table-striped.listing').find('.listingtbody').append('888');
 			
-	//		$.each(echos, function(){
-				
-			/*	$('table.table-striped.listing').find('.listingtbody').append('<tr id = \''+this['id']+'\'>\
-									<td class = \'wid\'>'+this['wid']+'</td>\
-									<td class = \'riq\'><span id = \'ri\'>'+this['riq']+'-</span>\
-														<span id = \'yue\'>'+this['yue']+'-</span>\
-														<span id = \'nin\'>'+this['nin']+'</span></td>\
-									<td class = \'shijian\'><span id = \'zht\'>'+this['zht']+':</span>\
-														<span id = \'fzh\'>'+this['fzh']+'</span>\
-														<span id = \'zou\'>'+this['zou']+'</span></td>\
-									<td class = \'shijian\'><span id = \'leixing\'>'+this['leixing']+'</span></td>\
-									<td class = \'settings\'><button class=\"btn btn-danger\">\
-																<span class = \'glyphicon glyphicon-trash\'></span>\
-															</button>\
-															\
-															<button class=\"btn btn-success\">\
-																<span class = \'glyphicon glyphicon-zoom-in\'></span>\
-															</button>\
-															\
-															<button class=\"btn btn-warning\">\
-																<span class = \'glyphicon glyphicon-wrench\'></span>\
-															</button></td>\
-									</tr>\
-				');
-				*/
-		//	});
+		
 
-			edit();
-			del();
+		//	edit();
+		//	del();
 		//}
 	//	);
 
-		return;
+	//	return;
 }
 
 function ConfirmEdit(){
