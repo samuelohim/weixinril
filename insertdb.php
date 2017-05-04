@@ -14,6 +14,7 @@
 		$leixing = $_POST['lx'];
 		$zou = $_POST['zou'];
 //  
+		
 		$jg2 = mysqli_query($con, "SELECT * FROM guanliyuan") or die(mysqli_error($con));
 		$lie2 = mysqli_fetch_array($jg2, MYSQLI_ASSOC);
 		($lie2['dianyou1']=='NULL')?$glDianyou1 ='':$glDianyou1 = $lie2['dianyou1'];
@@ -35,7 +36,5 @@
 		}
 		else
 			die(mysqli_error($con));
-
-
 
 ?>

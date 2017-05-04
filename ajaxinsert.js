@@ -7,10 +7,17 @@ $(document).ready(function(){
 					function(allEchos){
 						if (allEchos)
 						{
-							$('#myf :input').val('');
-							var shchu = $.parseJSON(allEchos);
-								console.log('ln 13 = '+shchu);
-							renderWebView(shchu);
+							console.log('ln 10 '+allEchos);
+							
+								$('#myf :input').val('');
+								try{
+									var shchu = $.parseJSON(allEchos);
+								}
+								catch(e){
+									console.log('ln 13 = '+e);
+								}
+								renderWebView(shchu);
+							
 						}
 						del();
 				}
@@ -31,13 +38,19 @@ $(document).ready(function(){
 function renderWebView(shchu){
 	$('table.listing').append('<tr id = \''+shchu['id']+'\'>\
 		<td class = \'wid\'>'+shchu['wid']+'</td>\
-		<td class = \'riq\'><span id = \'ri\'>'+shchu['riq']+'-</span>\
-							<span id = \'yue\'>'+shchu['yue']+'-</span>\
-							<span id = \'nin\'>'+shchu['nin']+'</span></td>\
-		<td class = \'shijian\'><span id = \'zht\'>'+shchu['xsh']+':</span>\
-							<span id = \'fzh\'>'+shchu['fzh']+'</span>\
-							<span id = \'zou\'>'+shchu['zou']+'</span></td>\
-		<td class = \'shijian\'><span id = \'leixing\'>'+shchu['lx']+'</span></td>\
+												<td class = \'riq\'>\
+														<div class = \'shijian\'>\
+															<span class="glyphicon glyphicon-time"></span>&nbsp;\
+															<span id = \'zht\'>'+shchu['zht']+':</span>\
+																	<span id = \'fzh\'>'+shchu['fzh']+'</span>\
+																	<span id = \'zou\'>'+shchu['zou']+'</span>\
+														</div>\
+														<div><span class="glyphicon glyphicon-calendar"></span>&nbsp;\
+																	<span id = \'ri\'>'+shchu['riq']+'-</span>\
+																	<span id = \'yue\'>'+shchu['yue']+'-</span>\
+																	<span id = \'nin\'>'+shchu['nin']+'</span></div>\
+												</td>\
+		<td class = \'leixing\'><span id = \'leixing\'>'+shchu['lx']+'</span></td>\
 		<td class = \'settings\'>\
 				<button class=\"btn btn-danger\">\
 					<span class = \'glyphicon glyphicon-trash\'></span>\

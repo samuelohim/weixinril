@@ -22,14 +22,20 @@ function showRecord(){
 						$.each(echos, function(){
 							
 						 $('table.table-striped.listing').find('.listingtbody').append('<tr id = \''+this['id']+'\'>\
-												<td class = \'wid\'>'+this['wid']+'</td>\
-												<td class = \'riq\'><span id = \'ri\'>'+this['riq']+'-</span>\
-																	<span id = \'yue\'>'+this['yue']+'-</span>\
-																	<span id = \'nin\'>'+this['nin']+'</span></td>\
-												<td class = \'shijian\'><span id = \'zht\'>'+this['zht']+':</span>\
+												<td class = \'wid\' >'+this['wid']+'</td>\
+												<td class = \'riq\'>\
+														<div class = \'shijian\'>\
+															<span class="glyphicon glyphicon-time"></span>&nbsp;\
+															<span id = \'zht\'>'+this['zht']+':</span>\
 																	<span id = \'fzh\'>'+this['fzh']+'</span>\
-																	<span id = \'zou\'>'+this['zou']+'</span></td>\
-												<td class = \'shijian\'><span id = \'leixing\'>'+this['leixing']+'</span></td>\
+																	<span id = \'zou\'>'+this['zou']+'</span>\
+														</div>\
+														<div><span class="glyphicon glyphicon-calendar"></span>&nbsp;\
+																	<span id = \'ri\'>'+this['riq']+'-</span>\
+																	<span id = \'yue\'>'+this['yue']+'-</span>\
+																	<span id = \'nin\'>'+this['nin']+'</span></div>\
+												</td>\
+												<td class = \'leixing\'><span id = \'leixing\'>'+this['leixing']+'</span></td>\
 												<td class = \'settings\'><button class=\"btn btn-danger\">\
 																			<span class = \'glyphicon glyphicon-trash\'></span>\
 																		</button>\
