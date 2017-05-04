@@ -1,31 +1,30 @@
 $(document).ready(function(){
 	$('#sub').click(function(){
-		$.post($('#myf').attr('action'),
+		$.post($('#myf').attr('action'),		// $('#myf').attr('action'), $.post(action, $('#myf :input').serializeArray(), function(){});
 
-			$('#myf :input').serializeArray(),
+												// $.post(action, serializeArray(), function(){$.parseJSON(echos)});
 
-					function(allEchos){
-						if (allEchos)
-						{
-							console.log('ln 10 '+allEchos);
-							
-								$('#myf :input').val('');
-								try{
-									var shchu = $.parseJSON(allEchos);
-								}
-								catch(e){
-									console.log('ln 13 = '+e);
-								}
-								renderWebView(shchu);
-							
-						}
-						del();
+			   $('#myf :input').serializeArray(),
+
+				function(allEchos){
+					if (allEchos)
+					{
+						console.log('ln 10 '+allEchos);
+						
+							$('#myf :input').val('');
+							try{
+								var shchu = $.parseJSON(allEchos);
+							}
+							catch(e){
+								console.log('ln 13 = '+e);
+							}
+							renderWebView(shchu);
+						
+					}
+					del();
 				}
 
-		);
-	
-			
-
+			 );
 	});
 
 	$('#myf').submit(function(){
@@ -41,7 +40,7 @@ function renderWebView(shchu){
 												<td class = \'riq\'>\
 														<div class = \'shijian\'>\
 															<span class="glyphicon glyphicon-time"></span>&nbsp;\
-															<span id = \'zht\'>'+shchu['zht']+':</span>\
+															<span id = \'zht\'>'+shchu['xsh']+':</span>\
 																	<span id = \'fzh\'>'+shchu['fzh']+'</span>\
 																	<span id = \'zou\'>'+shchu['zou']+'</span>\
 														</div>\

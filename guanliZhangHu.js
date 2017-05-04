@@ -17,35 +17,41 @@ function done(){
 
 function showRecord(){
 		$('table.listing').find('tbody.listingtbody').empty();
-
-					$.getJSON("retrievedb.php", function(echos){
+					$.getJSON('guanliZhangHu.php', function(echos){
 						$.each(echos, function(){
 							
-						 $('table.table-striped.listing').find('.listingtbody').append('<tr id = \''+this['id']+'\'>\
-												<td class = \'wid\' >'+this['wid']+'</td>\
-												<td class = \'riq\'>\
-														<div class = \'shijian\'>\
-															<span class="glyphicon glyphicon-time"></span>&nbsp;\
-															<span id = \'zht\'>'+this['zht']+':</span>\
-																	<span id = \'fzh\'>'+this['fzh']+'</span>\
-																	<span id = \'zou\'>'+this['zou']+'</span>\
-														</div>\
-														<div><span class="glyphicon glyphicon-calendar"></span>&nbsp;\
-																	<span id = \'ri\'>'+this['riq']+'-</span>\
-																	<span id = \'yue\'>'+this['yue']+'-</span>\
-																	<span id = \'nin\'>'+this['nin']+'</span></div>\
-												</td>\
-												<td class = \'leixing\'><span id = \'leixing\'>'+this['leixing']+'</span></td>\
+						 $('table.table-striped.listing').find('.listingtbody').append('\
+						 					<tr id = \''+this['id']+'\'>\
+												<td class = \'xm1\' >管理员1:'+this['xm1']+'</td>\
+												<td class = \'dianyou\'>\
+													<span class="glyphicon glyphicon-envelope"></span>&nbsp;\
+													<span id = \'zht\'>'+this['dianyou1']+'</span>\
+													</td>\
 												<td class = \'settings\'><button class=\"btn btn-danger\">\
 																			<span class = \'glyphicon glyphicon-trash\'></span>\
 																		</button>\
-																		\
-																		<button class=\"btn btn-success\">\
-																			<span class = \'glyphicon glyphicon-zoom-in\'></span>\
+																		<button class=\"btn btn-warning\">\
+																			<span class = \'glyphicon glyphicon-wrench\'></span>\
+																		</button></td>\
+												</tr>\
+						 					<tr id = \''+this['id']+'\'>\
+												<td class = \'xm2\' >管理员2:'+this['xm2']+'</td>\
+												<td class = \'dianyou\'>\
+													<span class="glyphicon glyphicon-envelope"></span>&nbsp;\
+													<span id = \'zht\'>'+this['dianyou2']+'</span>\
+													</td>\
+												<td class = \'settings\'><button class=\"btn btn-danger\">\
+																			<span class = \'glyphicon glyphicon-trash\'></span>\
 																		</button>\
-												</td>\
-											</tr>\
+																		<button class=\"btn btn-warning\">\
+																			<span class = \'glyphicon glyphicon-wrench\'></span>\
+																		</button></td>\
+												</tr>\
 							');
+
+						 	$('form#myf').find('table.table-bordered').find('#gongsim').attr('placeholder', '公司: '+this['gongsim']);
+						 	$('#dizhi').attr('placeholder', '地址: '+this['dizhi']);
+						 	$('#anjin').attr('placeholder', '按金: '+this['anjin']);
 						});
 			        })
 			        .error(function(jqXHR, textStatus, errorThrown){

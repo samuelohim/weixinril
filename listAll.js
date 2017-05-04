@@ -43,8 +43,11 @@ function showRecord(){
 																		<button class=\"btn btn-success\">\
 																			<span class = \'glyphicon glyphicon-zoom-in\'></span>\
 																		</button>\
-												</td>\
-											</tr>\
+																		\
+																		<button class=\"btn btn-warning\">\
+																			<span class = \'glyphicon glyphicon-wrench\'></span>\
+																		</button></td>\
+												</tr>\
 							');
 						});
 			        })

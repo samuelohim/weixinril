@@ -1,5 +1,5 @@
 <html>
-	<head><title>我的预约</title>
+	<head><title>Insert Data</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -10,7 +10,7 @@
 		<meta name = 'viewport' content = 'width=device-width initial-scale=1.0'>
 		<link rel = 'stylesheet' href = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
 		<script src = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
-		<script src = 'getJson.js' type = 'text/javascript'></script>
+		<script src = 'listAll.js' type = 'text/javascript'></script>
 		<script src = 'edit.js' type = 'text/javascript'></script>
 				<link rel="stylesheet" type="text/css" media="screen" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 
@@ -39,14 +39,11 @@
 	</head>
 	<body>
 
-		<div class = "container container-fluid" style = 'border: 0px solid green; margin-top: 23px;'>
-
-
-			<h2 style = 'margin-left: 8px; font-weight: bolder;'>我的预约</h2>		
+		<div class = "container container-fluid" style = 'border: 1px solid green; margin-top: 23px;'>
 			
 			<div class = 'container container-fluid'>
 				<form id = 'myf' action = 'insertdb.php' method = 'POST'>
-					<table class = 'table table-bordered' style = 'margin-top: 23px; width: 88%;'>
+					<table class = 'table table-bordered' style = 'margin-top: 23px;'>
 						<tr><td><input type = 'text' name = 'mzi' placeholder="姓名 Your Name (必须填写 Mandatory)" style = 'width: 38%'>
 								<input type = 'text' name = 'wid' placeholder="微信号 Wechat ID (必须填写 Mandatory)" style = 'width: 52%'></td>
 						</tr>
@@ -121,7 +118,7 @@
 						</tr>
 
 						<tr><td><textarea placeholder = 'Your message' id = 'xin' name = 'xin' style = 'width: 90%;'></textarea></td></tr>
-						<tr><td><button id = 'sub'   class = 'btn btn-warning' style = 'width: 90%;'><span class = 'glyphicon glyphicon-plus'></span></button></td></tr>
+						<tr><td><button id = 'sub' style = 'width: 90%;'>+</button></td></tr>
 
 							</td>
 						</tr>
@@ -146,9 +143,7 @@
 				        
 				    </div>
 				</div>
-				<span id = 'result' style = 'float: left; border: 0px solid green; 
-    border-radius: 10px;
-    box-shadow: 2px 1px 21px 2px #a0adb7; width: 88%; height: auto; padding: 8px; margin-bottom: 58px;'>
+				<span id = 'result' style = 'float: left; border: 1px solid green; width: 100%; height: auto; padding: 8px; margin-bottom: 58px;'>
 
 					<table class = 'table table-striped listing'>
 						<thead><tr><td>微信昵称</td>

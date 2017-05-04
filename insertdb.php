@@ -16,9 +16,9 @@
 //  
 		
 		$jg2 = mysqli_query($con, "SELECT * FROM guanliyuan") or die(mysqli_error($con));
-		$lie2 = mysqli_fetch_array($jg2, MYSQLI_ASSOC);
-		($lie2['dianyou1']=='NULL')?$glDianyou1 ='':$glDianyou1 = $lie2['dianyou1'];
-		($lie2['dianyou2']=='NULL')?$glDianyou2 ='':$glDianyou2 = $lie2['dianyou2'];
+		$lie2 = mysqli_fetch_array($jg2, MYSQLI_ASSOC); // $lie = mysqli_fetch_array($jg2, MYSQLI_ASSOC)
+				($lie2['dianyou1']=='NULL')?$glDianyou1 ='':$glDianyou1 = $lie2['dianyou1'];
+				($lie2['dianyou2']=='NULL')?$glDianyou2 ='':$glDianyou2 = $lie2['dianyou2'];
 		$gongsim = $lie2['gongsim'];
 		$zhuti = 'Re: '.$leixing." 预约官方确认信";
 				include_once('xin.php');
